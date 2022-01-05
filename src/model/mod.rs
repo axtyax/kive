@@ -1,5 +1,4 @@
 
-
 pub struct Document {
     pub words: Vec<Word>,
 }
@@ -7,6 +6,14 @@ pub struct Document {
 impl Document {
     pub fn length(&self) -> i32 {
         self.length()
+    }
+
+    pub fn from(s: &String) -> Document {
+        Document {
+            words:  s.split(' ')
+                     .map(|s| Word::from(s.to_string()) )
+                     .collect::<Vec<Word>>(),
+        }
     }
 }
 
@@ -23,3 +30,12 @@ impl Query {
 pub struct Word {
     pub data: String,
 }
+
+impl Word {
+    pub fn from(str: String) -> Word {
+        Word {
+            data: str,
+        }
+    },
+}
+
