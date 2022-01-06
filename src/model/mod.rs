@@ -31,6 +31,7 @@ pub struct Word {
     pub data: String,
 }
 
+// dummy change haha
 impl Word {
     pub fn from(str: String) -> Word {
         Word {
