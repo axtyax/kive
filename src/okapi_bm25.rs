@@ -11,8 +11,8 @@ pub fn score_okapi_bm25<T> (D: &model::Document,
                             C: &T) -> f64
                             where T: model::SearchContext {
     let mut score : f64 = 0.0;
-    for i in 0..5 {
-        score += 1.0;
+    for i in 0..D.length() {
+        score += f64::from(i);
     }
     score
 }
