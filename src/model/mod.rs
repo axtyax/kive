@@ -17,6 +17,10 @@ impl Document {
     }
 }
 
+pub trait SearchContext {
+    fn inverse_document_frequency() -> f64;
+}
+
 pub struct Query {
     pub words: Vec<Word>,
 }
@@ -37,6 +41,6 @@ impl Word {
         Word {
             data: str,
         }
-    },
+    }
 }
 
