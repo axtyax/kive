@@ -5,6 +5,14 @@ pub mod ts {
         pub data: String,
     }
 
+    impl Term {
+        pub fn from(term_str: String) -> Term {
+            Term {
+                data: term_str,
+            }
+        }
+    }
+
     pub trait Query {
         fn get_term(&self, _: usize) -> &Term;
         fn length(&self) -> usize;
@@ -22,7 +30,6 @@ pub mod ts {
     pub trait Score {
         fn foo(&self) -> f64;
     }
-
 
     pub mod params {
 
